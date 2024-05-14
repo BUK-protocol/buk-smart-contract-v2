@@ -35,6 +35,13 @@ const config: HardhatUserConfig = {
           ? [process.env.WALLET_PRIVATE_KEY]
           : [],
     },
+    polygonAmoy: {
+      url: `https://rpc-amoy.polygon.technology/`,
+      accounts:
+        process.env.WALLET_PRIVATE_KEY !== undefined
+          ? [process.env.WALLET_PRIVATE_KEY]
+          : [],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
@@ -43,6 +50,7 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       plum_test: "test",
+      polygonAmoy: process.env.POLYGONSCAN_API_KEY || "",
       polygonMumbai: process.env.POLYGONSCAN_API_KEY || "",
       polygon_mainnet: process.env.POLYGONSCAN_API_KEY || "",
     },
@@ -53,6 +61,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://plume-testnet.explorer.caldera.xyz/api?",
           browserURL: "https://plume-testnet.explorer.caldera.xyz",
+        },
+      },
+      {
+        network: "polygonAmoy",
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: "https://amoy.polygonscan.com",
         },
       },
     ],
