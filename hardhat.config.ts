@@ -60,6 +60,7 @@ const config: HardhatUserConfig = {
       polygonAmoy: process.env.POLYGONSCAN_API_KEY || "",
       polygonMumbai: process.env.POLYGONSCAN_API_KEY || "",
       polygon_mainnet: process.env.POLYGONSCAN_API_KEY || "",
+      polygon: process.env.POLYGONSCAN_API_KEY || "",
       bscTestnet: process.env.BNB_API_KEY || "",
     },
     customChains: [
