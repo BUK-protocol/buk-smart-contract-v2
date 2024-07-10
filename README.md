@@ -27,19 +27,25 @@ The BUK smart contract has undergone a comprehensive security audit by QuillAudi
 To get started with the BUK smart contract using Hardhat, follow these steps:
 
 1.  **Clone the repository**:
+
     `git clone https://github.com/BUK-protocol/buk-smart-contract-v2.git`
 
 2.  **Install dependencies**:
+
     `cd buk-smart-contract-v2`
+
     `npm install`
 
 3.  **Compile the contract**:
+
     `npx hardhat compile`
 
 4.  **Deploy the contract**:
+
     `npx hardhat run scripts/deploy.js`
 
 5.  **Test the contract**:
+
     `npx hardhat test`
 
 ### Contributing 🤝
