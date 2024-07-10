@@ -43,6 +43,7 @@ To get started with the BUK smart contract using Hardhat, follow these steps:
     `npx hardhat test`
 
 **Contributing 🤝**
+
 We welcome contributions from the community! If you would like to contribute to the BUK smart contract, please follow these guidelines:
 
 1.  **Fork the repository**
@@ -51,6 +52,7 @@ We welcome contributions from the community! If you would like to contribute to 
 4.  **Submit a pull request**
 
 **License 📜**
+
 The Buk Protocol smart contract is licensed under the MIT License.
 
 ![solidity](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black) ![openzeppelin](https://img.shields.io/badge/OpenZeppelin-4E5EE4?logo=OpenZeppelin&logoColor=fff&style=for-the-badge)
