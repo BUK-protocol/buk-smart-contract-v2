@@ -49,6 +49,20 @@ const config: HardhatUserConfig = {
           ? [process.env.WALLET_PRIVATE_KEY]
           : [],
     },
+    base: {
+      url: `https://mainnet.base.org`,
+      accounts:
+        process.env.WALLET_PRIVATE_KEY !== undefined
+          ? [process.env.WALLET_PRIVATE_KEY]
+          : [],
+    },
+    baseSepolia: {
+      url: `https://sepolia.base.org`,
+      accounts:
+        process.env.WALLET_PRIVATE_KEY !== undefined
+          ? [process.env.WALLET_PRIVATE_KEY]
+          : [],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
@@ -62,6 +76,8 @@ const config: HardhatUserConfig = {
       polygon_mainnet: process.env.POLYGONSCAN_API_KEY || "",
       polygon: process.env.POLYGONSCAN_API_KEY || "",
       bscTestnet: process.env.BNB_API_KEY || "",
+      baseSepolia: process.env.BASE_API_KEY || "",
+      base: process.env.BASE_API_KEY || "",
     },
     customChains: [
       {
@@ -81,6 +97,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://plume-testnet.explorer.caldera.xyz/api?",
           browserURL: "https://plume-testnet.explorer.caldera.xyz",
+        },
+      },
+      {
+        network: "baseSepolia",
+        chainId: 84532,
+        urls: {
+          apiURL: "https://api-sepolia.basescan.org/api",
+          browserURL: "https://sepolia.basescan.org",
         },
       },
     ],

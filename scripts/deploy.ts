@@ -81,6 +81,11 @@ async function main() {
   console.log("🚀 ~ Deployed Marketplace:", marketplace.target);
   await marketplace.waitForDeployment();
 
+  console.log("Timestamp 1: ", Date.now());
+  // add settimeout
+  await new Promise((resolve) => setTimeout(resolve, 20000));
+  console.log("Timestamp 2 : ", Date.now());
+
   console.log("🚀 ~ All contracts have been deployed");
 
   console.log("🚀 ~ 🚀 ~ Configuring contracts");
