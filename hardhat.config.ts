@@ -63,6 +63,13 @@ const config: HardhatUserConfig = {
           ? [process.env.WALLET_PRIVATE_KEY]
           : [],
     },
+    berachainTestnet: {
+      url: `https://bartio.rpc.berachain.com/`,
+      accounts:
+        process.env.WALLET_PRIVATE_KEY !== undefined
+          ? [process.env.WALLET_PRIVATE_KEY]
+          : [],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
@@ -78,6 +85,7 @@ const config: HardhatUserConfig = {
       bscTestnet: process.env.BNB_API_KEY || "",
       baseSepolia: process.env.BASE_API_KEY || "",
       base: process.env.BASE_API_KEY || "",
+      berachainTestnet: process.env.BERA_CHAIN_API_KEY || "",
     },
     customChains: [
       {
@@ -105,6 +113,15 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api-sepolia.basescan.org/api",
           browserURL: "https://sepolia.basescan.org",
+        },
+      },
+      {
+        network: "berachainTestnet",
+        chainId: 80084,
+        urls: {
+          apiURL:
+            "https://api.routescan.io/v2/network/testnet/evm/80084/etherscan/api/",
+          browserURL: "https://bartio.beratrail.io/",
         },
       },
     ],
