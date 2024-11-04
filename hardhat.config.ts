@@ -85,7 +85,7 @@ const config: HardhatUserConfig = {
       bscTestnet: process.env.BNB_API_KEY || "",
       baseSepolia: process.env.BASE_API_KEY || "",
       base: process.env.BASE_API_KEY || "",
-      berachainTestnet: process.env.BERA_CHAIN_API_KEY || "",
+      berachainTestnet: process.env.BERA_CHAIN_API_KEY || "bartio_testnet",
     },
     customChains: [
       {
