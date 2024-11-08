@@ -70,6 +70,13 @@ const config: HardhatUserConfig = {
           ? [process.env.WALLET_PRIVATE_KEY]
           : [],
     },
+    boba_sepolia: {
+      url: 'https://sepolia.boba.network',
+      accounts:
+        process.env.WALLET_PRIVATE_KEY !== undefined
+          ? [process.env.WALLET_PRIVATE_KEY]
+          : [],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
@@ -86,6 +93,7 @@ const config: HardhatUserConfig = {
       baseSepolia: process.env.BASE_API_KEY || "",
       base: process.env.BASE_API_KEY || "",
       berachainTestnet: process.env.BERA_CHAIN_API_KEY || "bartio_testnet",
+      boba_sepolia: "boba"
     },
     customChains: [
       {
@@ -122,6 +130,14 @@ const config: HardhatUserConfig = {
           apiURL:
             "https://api.routescan.io/v2/network/testnet/evm/80084/etherscan/api/",
           browserURL: "https://bartio.beratrail.io/",
+        },
+      },
+      {
+        network: "boba_sepolia",
+        chainId: 28882,
+        urls: {
+          apiURL: "https://api.routescan.io/v2/network/testnet/evm/28882/etherscan",
+          browserURL: "https://testnet.bobascan.com"
         },
       },
     ],

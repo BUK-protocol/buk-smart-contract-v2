@@ -10,8 +10,8 @@ async function main() {
 
   // Deploy TOKEN - Use exiting one if its already deployed
   const tokenArgs = [
-    "BUK USDC",
-    "BUK-USDC",
+    "BUK USDC SS",
+    "BUK-USDC-SS",
     6,
     deployer.address,
     1000000000000000,
@@ -21,7 +21,12 @@ async function main() {
   await token.waitForDeployment();
 
   console.log("🚀 ~ All contracts have been deployed");
+  console.log("Timestamp 1: ", Date.now());
+  // add settimeout
+  await new Promise((resolve) => setTimeout(resolve, 20000));
+  console.log("Timestamp 2 : ", Date.now());
   console.log("🚀 ~ 🚀 ~ Verifying contracts");
+  
 
   await run("verify:verify", {
     address: token.target,
