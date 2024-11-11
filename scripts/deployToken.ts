@@ -10,8 +10,8 @@ async function main() {
 
   // Deploy TOKEN - Use exiting one if its already deployed
   const tokenArgs = [
-    "BUK USDC SS",
-    "BUK-USDC-SS",
+    "BUK USDC VV",
+    "BUK-USDC-VV",
     6,
     deployer.address,
     1000000000000000,
